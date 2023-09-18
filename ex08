@@ -10,7 +10,7 @@ func main() {
 	var reverse string
 
 	for i := len(x) - 1; i >= 0; i-- {
-		reverse += string((x[i]))
+		reverse = reverse + string(x[i])
 	}
 	fmt.Println(reverse)
 }
