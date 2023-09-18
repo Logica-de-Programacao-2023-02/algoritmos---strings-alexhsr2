@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main() {
+	var x, y string
+	fmt.Print("Escreva duas palavras: ")
+	fmt.Scan(&x, &y)
+
+	xMapa := make(map[rune]int)
+	yMapa := make(map[rune]int)
+
+	for _, c := range x {
+		xMapa[c]++
+	}
+	for _, c := range y {
+		yMapa[c]++
+	}
+
+	for char, qtdX := range xMapa {
+		qtdY := yMapa[char]
+		if qtdX != qtdY {
+			fmt.Println("as palavras não são anagramas")
+			return
+		}
+	}
+
+	fmt.Println(xMapa)
+	fmt.Println(yMapa)
+}
