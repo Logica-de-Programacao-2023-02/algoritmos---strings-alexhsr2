@@ -3,28 +3,28 @@ package main
 import "fmt"
 
 func main() {
-	var x, y string
+	var a, b string
 	fmt.Print("Escreva duas palavras: ")
-	fmt.Scan(&x, &y)
+	fmt.Scan(&a, &b)
 
-	xMapa := make(map[rune]int)
-	yMapa := make(map[rune]int)
+	aMapa := make(map[string]int)
+	bMapa := make(map[string]int)
 
-	for _, c := range x {
-		xMapa[c]++
+	for _, c := range a {
+		aMapa[string(c)]++
 	}
-	for _, c := range y {
-		yMapa[c]++
+	for _, c := range b {
+		bMapa[string(c)]++
 	}
 
-	for char, qtdX := range xMapa {
-		qtdY := yMapa[char]
-		if qtdX != qtdY {
+	for char, qtda := range aMapa {
+		qtdb := bMapa[char]
+		if qtda != qtdb {
 			fmt.Println("as palavras não são anagramas")
 			return
 		}
 	}
 
-	fmt.Println(xMapa)
-	fmt.Println(yMapa)
+	fmt.Println(aMapa)
+	fmt.Println(bMapa)
 }
