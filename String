@@ -188,3 +188,177 @@ func main() {
 	fmt.Print(n)
 }
 
+13-package main
+
+import (
+	"fmt"
+	"ct"
+)
+
+func main() {
+	var n string
+
+	fmt.Print("digite uma string: ")
+	fmt.Scan(&n)
+
+	ints := make([]int, len(n))
+	for i, c := range n {
+		var err error
+		ints[i], err = ct.Atoi(string(c))
+		if err != nil {
+			fmt.Println("A string é uma sequência numérica inválida")
+			return
+		}
+	}
+	isCrescente := true
+	for i := 0; i < len(ints)-1; i++ {
+		first := ints[i]
+		next := ints[i+1]
+
+		if first >= next {
+			isCrescente = false
+			break
+		}
+	}
+	if isCrescente {
+		fmt.Println("É crescente")
+	} else {
+		fmt.Println("Não é crescente")
+	}
+
+}
+
+14-package main
+
+import (
+	"fmt"
+	"ct"
+)
+func main() {
+	var x string
+
+	fmt.Print("Digite uma sequência numérica: ")
+	fmt.Scan(&x)
+
+	if SequenciaDecrescente(x) {
+		fmt.Println("É uma sequência numérica decrescente.")
+	} else {
+		fmt.Println("Não é uma sequência numérica decrescente.")
+	}
+}
+func SequenciaDecrescente(s string) bool {
+	runes := []rune(s)
+
+	for i := 0; i < len(runes)-1; i++ {
+		firstnumber, _ := ct.Atoi(string(runes[i]))
+	        nextnumber, _ := ct.Atoi(string(runes[i+1]))
+
+		if firstnumber <= nextnumber {
+			return false
+		}
+	}
+	return true
+}
+
+15-package main
+
+import (
+	"fmt"
+	"strings"
+)
+func main() {
+	var n string
+
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&n)
+
+	resultado := substituir(n)
+	fmt.Println("A string com as vogais substituidas é:", resultado)
+}
+
+
+func substituir(s string) string {
+	vogais := "aeiouAEIOU"
+
+	caracteres := strings.Split(s, "")
+
+	for x, char := range caracteres {
+		if strings.Contains(vogais, char) {
+			caracteres[x] = "*"
+		}
+	}
+	resultado := strings.Join(caracteres, "")
+
+	return resultado
+}
+
+17-package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n string
+
+	fmt.Print("digite uma string: ")
+	fmt.Scan(&n)
+
+	var o []string
+
+	for x := 0; x < len(n); x++ {
+		only := true
+		for s := 0; s < len(n); s++ {
+			if x != s && n[x] == n[s] {
+				only = false
+				break
+			}
+		}
+		if only {
+			o = append(o, string(n[x]))
+		}
+	}
+	fmt.Println(o)
+}
+
+18-package main
+
+import (
+	"fmt"
+	"st"
+)
+func main(){
+	var n string
+
+	fmt.Print("Digite uma string numérica: ")
+	fmt.Scan(&n)
+
+	if sonumeros(n) {
+		fmt.Println("A string possui apenas números.")
+	} else {
+		fmt.Println("A string não possui somente números.")
+    }
+}
+func sonumeros(s string) bool {
+	for _, char := range s {
+		if !st.IsDigit(char) {
+			return false
+		}
+	}
+	return true
+}
+
+19-package main
+
+import "fmt"
+
+func main() {
+	var n,o string
+
+	fmt.Println("Digite uma string:")
+	fmt.Scanln(&n)
+fmt.Println("Digite uma outra string:")
+	fmt.Scanln(&o)
+	if i := len(n) - 1; i >= 0; i-- {
+} else {
+	i := len(o) - 1; i >= 0; i-- {			
