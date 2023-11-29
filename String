@@ -1,0 +1,190 @@
+1- package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main(){
+	var name string
+
+	fmt.Println("digite o nome em letras minúsculas: ")
+	fmt.Scan(&name)
+
+	maior := strings.ToUpper(name)
+	fmt.Println("o nome em letras maiúsculas é: ", maior)
+}
+
+2- main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var pro string
+	fmt.Println("digite um texto: ")
+	fmt.Scan(&pro)
+
+	result := strings.ReplaceAll(pro, " ", "")
+	fmt.Println("o resultado é ", result)
+}
+
+3-package main
+
+import (
+	"fmt"
+	"strings"
+)
+func main() {
+	var palavra,oldcaractere , newcaractere string
+
+	fmt.Print("digite uma string: ")
+	fmt.Scan(&palavra)
+
+	fmt.Print("digite o caractere que será substituído: ")
+	fmt.Scan(&oldcaractere )
+
+	fmt.Print("digite o novo caractere: ")
+	fmt.Scan(&newcaractere)
+
+	palavranova := strings.ReplaceAll(palavra, caractereAntigo, novoCaractere)
+
+	fmt.Println("o resultado é:", palavranova)
+}
+
+4-package main
+
+import (
+	"fmt"
+)
+func main() {
+	var string1, string2 string
+	fmt.Println("digite a primeira  string: ")
+	fmt.Scan(&string1)
+
+	fmt.Println("digite a segunda  string: ")
+	fmt.Scan(&string2)
+
+	if string1 == string2 {
+		fmt.Println("as duas strings são iguais")
+	} else {
+		fmt.Println("as duas strings são diferentes")
+	}
+}
+
+5-package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	var n string
+	fmt.Println("digite um número:")
+	fmt.Scan(&n)
+
+	_, err := strconv.ParseFloat(n, 64)
+	if err == nil {
+		fmt.Println("é um número válido  em float")
+	} else {
+		fmt.Println("o valor é um número inválido em float")
+	}
+}
+
+6-package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+ main() {
+
+	var n string
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Print("Digite uma palavra : ")
+	scanner.Scan()
+	n = scanner.Text()
+
+	book := strings.Fields(str)
+
+	fmt.Printf("A frase possui %d palavras", len(book))
+
+}
+
+7-package main
+
+import (
+    "fmt"
+    "unicode"
+)
+
+func main() {
+    var r string
+    fmt.Print("Digite uma string: ")
+    fmt.Scanln(&r)
+
+    Number := false
+    for _, char := range r {
+        if unicode.IsDigit(char) {
+            Number = true
+            break
+        }
+    }
+
+    if Number {
+        Println("A string possui um numero")
+	} else {
+		fmt.Println("A string não possui um numero")
+	}
+}
+
+9-package main
+
+import (
+	"fmt"
+	"strings"
+)
+func main() {
+	var car , velha, nova string
+
+	fmt.Print("Digite uma string: ")
+	fmt.Scan(&car)
+
+	fmt.Print("Digite a letra que será substituída: ")
+	fmt.Scan(&velha)
+
+	fmt.Print("Digite a nova letra: ")
+	fmt.Scan(&nova)
+
+	textoModificado := strings.ReplaceAll(car, velha, nova)
+
+	fmt.Println("Texto modificado:", textoModificado)
+}
+
+11-package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var n string
+
+	fmt.Print("escreva uma string: ")
+	fmt.Scan(&n)
+
+	vogais := []string{"A", "a", "E", "e", "I", "i", "O", "o", "U", "u"}
+
+	for _, vogal := range vogais {
+		n = strings.ReplaceAll(n, vogal, "")
+	}
+	fmt.Print(n)
+}
+
